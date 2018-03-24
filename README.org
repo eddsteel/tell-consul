@@ -1,0 +1,7 @@
+* Tell Consul
+
+Web extension that stores state in consul. Currently supports
+"now-playing" status of google music and netflix.
+
+This needs the OPTIONS support in [[https://github.com/hashicorp/consul][consul]], which isn't released yet,
+but is in ~HEAD~.

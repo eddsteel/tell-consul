@@ -73,7 +73,8 @@ var Extract = (function(){
     }
 
     var isPlayingNetflix = function() {
-        return document.querySelector(".button-nfplayerPause") !== null;
+	// we pretty much never have netflix paused in another tab while watching/listening to something else I guess?
+        return true; // document.querySelector(".button-nfplayerPause") !== null;
     }
 
     var extractPlayMusic = function() {

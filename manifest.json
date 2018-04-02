@@ -9,7 +9,7 @@
   "permissions": ["*://localhost/*", "webRequest"],
   "content_scripts": [
       {
-          "matches": ["*://play.google.com/music/listen*", "*://www.netflix.com/watch/*"],
+          "matches": ["*://play.google.com/music/listen*", "*://*.netflix.com/watch/*"],
           "js": ["tellconsul.js"]
       }
   ]

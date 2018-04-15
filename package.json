@@ -1,0 +1,28 @@
+{
+  "name": "tell-consul",
+  "version": "1.0.0",
+  "description": "Tell Consul what's playing",
+  "main": "tellconsul.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddsteel/tell-consul.git"
+  },
+  "author": "Edward Steel <edward.steel@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/eddsteel/tell-consul/issues"
+  },
+  "homepage": "https://github.com/eddsteel/tell-consul#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "web-ext": "^2.6.0",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "scripts": {
+    "watch": "webpack --watch --mode development",
+    "extension": "web-ext"
+  }
+}

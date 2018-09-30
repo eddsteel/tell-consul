@@ -1,7 +1,17 @@
 * Tell Consul
 
 Web extension that stores state in consul. Currently supports
-"now-playing" status of google music and netflix.
+"now-playing" status of Google Music, YouTube, Shudder and Netflix.
 
-This needs the OPTIONS support in [[https://github.com/hashicorp/consul][consul]], which isn't released yet,
-but is in ~HEAD~.
+1. Install Extension
+2. Watch/listen to something
+3. Observe
+
+#+BEGIN_SRC sh
+~ $ consul kv get now-playing
+{"title":"I'll Still Destroy You","artist":"The National","album":"Sleep Well Beast"}
+#+END_SRC
+
+Build cool stuff on top!
+
+This requires consul 1.07+ (with [OPTIONS support](https://github.com/hashicorp/consul/pull/3885)).

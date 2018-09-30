@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Tell Consul",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tells consul what's playing",
   "icons": {
       "24": "icons/tellconsul.png"
@@ -9,7 +9,12 @@
   "permissions": ["*://localhost/*", "webRequest"],
   "content_scripts": [
       {
-        "matches": ["*://play.google.com/music/listen*", "*://*.netflix.com/*"],
+        "matches": [
+          "*://play.google.com/music/listen*",
+          "*://*.netflix.com/*",
+          "*://*.youtube.com/*",
+          "*://*.shudder.com/play*"
+        ],
           "js": ["dist/content.js"]
       }
   ]

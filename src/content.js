@@ -1,7 +1,9 @@
-import NowPlaying from './nowplaying'
 import Consul from './consul'
-import PlayMusic from './playmusic'
 import Netflix from './netflix'
+import NowPlaying from './nowplaying'
+import PlayMusic from './playmusic'
+import Shudder from './shudder'
+import Youtube from './youtube'
 
 console.log("tell consul yo")
 
@@ -9,12 +11,16 @@ console.log("tell consul yo")
 var Extract = (function(){
   var extractors = {
     "netflix": {"isPlaying": Netflix.isPlaying, "extract": Netflix.extract},
-    "play-music": {"isPlaying": PlayMusic.isPlaying, "extract": PlayMusic.extract}
+    "play-music": {"isPlaying": PlayMusic.isPlaying, "extract": PlayMusic.extract},
+    "shudder": {"isPlaying": Shudder.isPlaying, "extract": Shudder.extract},
+    "youtube": {"isPlaying": Youtube.isPlaying, "extract": Youtube.extract},
   }
 
   var addresses = {
     "netflix": /^https:\/\/www.netflix.com\//,
-    "play-music": /^https:\/\/play.google.com\/music\//
+    "play-music": /^https:\/\/play.google.com\/music\//,
+    "shudder": /^https:\/\/www.shudder.com\/play\//,
+    "youtube": /^https:\/\/www.youtube.com\//,
   }
 
   function findExtractor(location) {

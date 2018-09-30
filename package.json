@@ -1,6 +1,6 @@
 {
   "name": "tell-consul",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tell Consul what's playing",
   "main": "tellconsul.js",
   "repository": {

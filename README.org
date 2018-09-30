@@ -14,4 +14,4 @@ Web extension that stores state in consul. Currently supports
 
 Build cool stuff on top!
 
-This requires consul 1.07+ (with [OPTIONS support](https://github.com/hashicorp/consul/pull/3885)).
+This requires consul 1.07+ (with [OPTIONS support](https://github.com/hashicorp/consul/pull/3885)). It should be available at https://localhost:8543 (or you'll need to change the code).

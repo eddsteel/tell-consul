@@ -3,9 +3,14 @@ export default class NowPlaying {
     constructor(params) {
         this.title = params.title;
         this.artist = params.artist;
-        this.album = params.album
-        this.station = params.station
-        this.series = params.series
+        this.album = params.album;
+        this.station = params.station;
+        this.series = params.series;
+    }
+
+    now() {
+        this.time = new Date().getTime();
+        return this;
     }
 
     toString() {

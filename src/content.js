@@ -1,8 +1,10 @@
 import Consul from './consul'
+import Crave from './crave'
 import Netflix from './netflix'
 import NowPlaying from './nowplaying'
 import PlayMusic from './playmusic'
 import Shudder from './shudder'
+import Twitch from './twitch'
 import Youtube from './youtube'
 
 console.log("tell consul yo")
@@ -10,16 +12,20 @@ console.log("tell consul yo")
 //- extract
 var Extract = (function(){
   var extractors = {
+    "crave": {"isPlaying": Crave.isPlaying, "extract": Crave.extract},
     "netflix": {"isPlaying": Netflix.isPlaying, "extract": Netflix.extract},
     "play-music": {"isPlaying": PlayMusic.isPlaying, "extract": PlayMusic.extract},
     "shudder": {"isPlaying": Shudder.isPlaying, "extract": Shudder.extract},
+    "twitch": {"isPlaying": Twitch.isPlaying, "extract": Twitch.extract},
     "youtube": {"isPlaying": Youtube.isPlaying, "extract": Youtube.extract},
   }
 
   var addresses = {
+    "crave": /^https:\/\/www.crave.ca\//,
     "netflix": /^https:\/\/www.netflix.com\//,
     "play-music": /^https:\/\/play.google.com\/music\//,
     "shudder": /^https:\/\/www.shudder.com\/play\//,
+    "twitch": /^https:\/\/www.twitch.tv\//,
     "youtube": /^https:\/\/www.youtube.com\//,
   }
 
@@ -55,8 +61,8 @@ var BrowserAddOn = (function(){
         var np = Extract.extractNowPlaying()
         if (np !== undefined && np.title !== undefined) {
             if (lastJSON !== np.toJson()) {
-                Consul.publish("now-playing", np).then(function(){console.log("Now playing", np)})
                 lastJSON = np.toJson()
+                Consul.publish("now-playing", np.now()).then(function(){console.log("Now playing", np)})
             } else {
                 console.log("Still playing", np.title + ".")
             }

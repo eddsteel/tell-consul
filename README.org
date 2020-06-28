@@ -1,7 +1,8 @@
 * Tell Consul
 
 Web extension that stores state in consul. Currently supports
-"now-playing" status of Google Music, YouTube, Shudder and Netflix.
+"now-playing" status of Crave, Google Music/ Google Movies, Twitch,
+YouTube, Shudder and Netflix.
 
 1. Install Extension
 2. Watch/listen to something
